@@ -18,18 +18,16 @@ def Newton(f, dfdx, x, eps):
         iteration_counter = -1
     return x, iteration_counter
 
-if __name__ == '__main__':
+def f(x):
+    return x**2 - 9
 
-    def f(x):
-        return x**2 - 9
-    
-    def dfdx(x):
-        return 2*x
-    
-    solution, no_iterations = Newton(f, dfdx, x=1000, eps=1.0e-6)
-    
-    if no_iterations > 0:    # Solution found
-        print('Number of function calls: {:d}'.format(1+2*no_iterations))
-        print('A solution is: {:f}'.format(solution))
-    else:
-        print('Solution not found!')
+def dfdx(x):
+    return 2*x
+
+solution, no_iterations = Newton(f, dfdx, x=1000, eps=1.0e-6)
+
+if no_iterations > 0:    # Solution found
+    print('Number of function calls: {:d}'.format(1 + 2*no_iterations))
+    print('A solution is: {:f}'.format(solution))
+else:
+    print('Solution not found!')
