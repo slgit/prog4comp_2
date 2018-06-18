@@ -29,7 +29,7 @@ if __name__ == '__main__':
     solution, no_iterations = Newton(f, dfdx, x=1000, eps=1.0e-6)
     
     if no_iterations > 0:    # Solution found
-        print('Number of function calls: {:d}'.format(1 + 2*no_iterations))
+        print('Number of function calls: {:d}'.format(1+2*no_iterations))
         print('A solution is: {:f}'.format(solution))
     else:
         print('Solution not found!')
