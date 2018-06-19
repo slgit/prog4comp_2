@@ -1,6 +1,6 @@
 import sys
 
-def bisection(f, x_L, x_R, eps, return_x_list=False):
+def bisection(f, x_L, x_R, eps):
     f_L = f(x_L)
     if f_L*f(x_R) > 0:
         print("""Error! Function does not have opposite 
@@ -9,8 +9,6 @@ def bisection(f, x_L, x_R, eps, return_x_list=False):
     x_M = (x_L + x_R)/2.0
     f_M = f(x_M)
     iteration_counter = 1
-    if return_x_list:
-        x_list = []
 
     while abs(f_M) > eps:
         if f_L*f_M > 0:   # i.e. same sign
@@ -21,12 +19,7 @@ def bisection(f, x_L, x_R, eps, return_x_list=False):
         x_M = (x_L + x_R)/2
         f_M = f(x_M)
         iteration_counter = iteration_counter + 1
-        if return_x_list:
-            x_list.append(x_M)
-    if return_x_list:
-        return x_list, iteration_counter
-    else:
-        return x_M, iteration_counter
+    return x_M, iteration_counter
 
 if __name__ == '__main__':
     def f(x):
@@ -36,5 +29,5 @@ if __name__ == '__main__':
     
     solution, no_iterations = bisection(f, a, b, eps=1.0e-6)
     
-    print('Number of function calls: {:d}'.format(1+2*no_iterations))
+    print('Number of function calls: {:d}'.format(1 + 2*no_iterations))
     print('A solution is: {:f}'.format(solution))
