@@ -3,8 +3,8 @@ import sys
 def bisection(f, x_L, x_R, eps, return_x_list=False):
     f_L = f(x_L)
     if f_L*f(x_R) > 0:
-        print('Error! Function does not have opposite \
-                 signs at interval endpoints!')
+        print("""Error! Function does not have opposite 
+                 signs at interval endpoints!""")
         sys.exit(1)
     x_M = float(x_L + x_R)/2
     f_M = f(x_M)
