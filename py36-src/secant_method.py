@@ -21,15 +21,16 @@ def secant(f, x0, x1, eps):
         iteration_counter = -1
     return x, iteration_counter
 
-def f(x):
-    return x**2 - 9
-
-x0 = 1000;   x1 = x0 - 1
-
-solution, no_iterations = secant(f, x0, x1, eps=1.0e-6)
-
-if no_iterations > 0:    # Solution found
-    print('Number of function calls: {:d}'.format(2 + no_iterations))
-    print('A solution is: {:f}'.format(solution))
-else:
-    print('Solution not found!')
+if __name__ == '__main__':
+    def f(x):
+        return x**2 - 9
+    
+    x0 = 1000;   x1 = x0 - 1
+    
+    solution, no_iterations = secant(f, x0, x1, eps=1.0e-6)
+    
+    if no_iterations > 0:    # Solution found
+        print('Number of function calls: {:d}'.format(2+no_iterations))
+        print('A solution is: {:f}'.format(solution))
+    else:
+        print('Solution not found!')

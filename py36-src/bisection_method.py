@@ -28,12 +28,13 @@ def bisection(f, x_L, x_R, eps, return_x_list=False):
     else:
         return x_M, iteration_counter
 
-def f(x):
-    return x**2 - 9
-
-a = 0;   b = 1000
-
-solution, no_iterations = bisection(f, a, b, eps=1.0e-6)
-
-print('Number of function calls: {:d}'.format(1 + 2*no_iterations))
-print('A solution is: {:f}'.format(solution))
+if __name__ == '__main__':
+    def f(x):
+        return x**2 - 9
+    
+    a = 0;   b = 1000
+    
+    solution, no_iterations = bisection(f, a, b, eps=1.0e-6)
+    
+    print('Number of function calls: {:d}'.format(1+2*no_iterations))
+    print('A solution is: {:f}'.format(solution))
