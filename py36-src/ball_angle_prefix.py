@@ -5,4 +5,4 @@ y = 10.0             # Vertical position
 
 angle = math.atan(y/x)        
 
-print (angle/math.pi)*180
+print((angle/math.pi)*180)
